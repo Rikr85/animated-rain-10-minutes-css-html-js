@@ -24,7 +24,19 @@
             let duration = 1 + Math.random() * 1;
             let size = Math.random() * 1.4;
             elem.classList.add("text");
+            cloud.appendChild(elem);
+            elem.innerText = randomText();
+            elem.style.left = 10 + left + "px";
+            elem.style.fontSize = 0.5 + size + "em";
+            elem.style.animationDuration = duration + "s";
+
+            setTimeout(function(){
+                cloud.removeChild(elem);
+            }, 2000);
         }
+        setInterval(function () {
+            rain();
+        }, 20);
     </script>
 </body>
 </html>
